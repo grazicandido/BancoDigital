@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>Conta.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cba6f7;}
+.s1 { color: #cdd6f4;}
+.s2 { color: #9399b2;}
+.s3 { color: #89dceb;}
+.s4 { color: #fab387;}
+</style>
+</head>
+<body bgcolor="#1e1e2e">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Conta.java</font>
+</center></td></tr></table>
+<pre><span class="s0">public abstract class </span><span class="s1">Conta </span><span class="s2">{</span>
+        <span class="s0">private static final int </span><span class="s1">Agencia_Padrao </span><span class="s3">= </span><span class="s4">1</span><span class="s2">;</span>
+        <span class="s0">private static int </span><span class="s1">Sequence </span><span class="s3">= </span><span class="s4">1</span><span class="s2">;</span>
+
+        <span class="s0">protected int </span><span class="s1">agencia</span><span class="s2">;</span>
+        <span class="s0">protected int </span><span class="s1">numero</span><span class="s2">;</span>
+        <span class="s0">protected double </span><span class="s1">saldo</span><span class="s2">;</span>
+
+        <span class="s0">public </span><span class="s1">Conta</span><span class="s2">(){</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">agencia </span><span class="s3">= </span><span class="s1">Agencia_Padrao</span><span class="s2">;</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">numero </span><span class="s3">= </span><span class="s1">Sequence</span><span class="s3">++</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+        <span class="s0">public void </span><span class="s1">sacar</span><span class="s2">(</span><span class="s0">double </span><span class="s1">valor</span><span class="s2">){</span>
+            <span class="s1">saldo </span><span class="s3">= </span><span class="s1">saldo </span><span class="s3">- </span><span class="s1">valor</span><span class="s2">;</span>
+        <span class="s2">}</span>
+        <span class="s0">public void </span><span class="s1">depositar</span><span class="s2">(</span><span class="s0">double </span><span class="s1">valor</span><span class="s2">){</span>
+            <span class="s1">saldo </span><span class="s3">= </span><span class="s1">saldo </span><span class="s3">+ </span><span class="s1">valor</span><span class="s2">;</span>
+        <span class="s2">}</span>
+        <span class="s0">public void </span><span class="s1">transferir</span><span class="s2">(</span><span class="s0">double </span><span class="s1">valor</span><span class="s2">, </span><span class="s1">Conta contaDestino</span><span class="s2">){</span>
+            <span class="s0">this</span><span class="s2">.</span><span class="s1">sacar</span><span class="s2">(</span><span class="s1">valor</span><span class="s2">);</span>
+            <span class="s1">contaDestino</span><span class="s2">.</span><span class="s1">depositar</span><span class="s2">(</span><span class="s1">valor</span><span class="s2">);</span>
+        <span class="s2">}</span>
+        <span class="s0">public int </span><span class="s1">getAgencia</span><span class="s2">(){</span>
+            <span class="s0">return </span><span class="s1">agencia</span><span class="s2">;</span>
+        <span class="s2">}</span>
+        <span class="s0">public int </span><span class="s1">getNumero</span><span class="s2">(){</span>
+            <span class="s0">return </span><span class="s1">numero</span><span class="s2">;</span>
+        <span class="s2">}</span>
+        <span class="s0">public double </span><span class="s1">getSaldo</span><span class="s2">(){</span>
+            <span class="s0">return </span><span class="s1">saldo</span><span class="s2">;</span>
+        <span class="s2">}</span>
+
+    <span class="s0">public void </span><span class="s1">imprimirExtrato</span><span class="s2">() {</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+
+
+</pre>
+</body>
+</html>
